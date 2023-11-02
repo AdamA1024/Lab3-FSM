@@ -2,6 +2,7 @@
 #include "verilated.h"
 #include "verilated_vcd_c.h"
 #include "vbuddy.cpp"
+#include "iostream"
 int main(int argc, char **argv, char **env)
 {
     int i;
@@ -21,7 +22,7 @@ int main(int argc, char **argv, char **env)
     }
     vbdHeader("Lab3T1: lfsr");
     top->clk = 1;
-    top->rst = 0;
+    top->rst = 1;
     vbdSetMode(1);
 
     for (i = 0; i < 1000000; i++)
@@ -32,9 +33,16 @@ int main(int argc, char **argv, char **env)
             top->clk = !top->clk;
             top->eval();
         }
-        top->en = vbdFlag();
+        std::cout << (int)top->data_out << std::endl;
+        // top->en = vbdFlag();
+        top->en = 1;
+        top->rst = 0;
+
         vbdHex(1, top->data_out & 0xF);
         vbdBar(top->data_out & 0xFF);
+        while (!vbdFlag())
+        {
+        }
         vbdCycle(i);
         // either simulation finished, or 'q' is pressed
         if ((Verilated::gotFinish()) || (vbdGetkey() == 'q'))

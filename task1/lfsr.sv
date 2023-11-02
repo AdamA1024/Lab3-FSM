@@ -5,12 +5,12 @@ module lfsr (
     output logic  [3:0]  data_out //pseudo-random output        
 );
 
-    logic [4:1] sreg; //shift register
+    logic [4:1] sreg; //shift register    
     always_ff @ (posedge clk, posedge rst)
-        if(en)
+    
             if(rst)
                 sreg<=4'b0001;
-            else  
+            else if (en)
                 sreg <= {sreg[3:1], sreg[4]^sreg[3]};
     assign data_out = sreg;
 
