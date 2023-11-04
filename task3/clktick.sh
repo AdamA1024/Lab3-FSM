@@ -1,5 +1,5 @@
 #!/bin/sh
-
+# SO 25 to 27 Range for N seems ideal....
 # cleanup
 rm -rf obj_dir
 rm -f *.vcd

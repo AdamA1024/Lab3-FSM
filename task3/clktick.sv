@@ -6,10 +6,18 @@ module clktick #(
   input  logic             rst,      // reset
   input  logic             en,       // enable signal
   input  logic [WIDTH-1:0] N,     	 // clock divided by N+1
-  output logic  		       tick      // tick output
+  output logic  		       tick,     // tick output
+  output logic [7:0]       lightsequence //light output to vbud
 );
 
 logic [WIDTH-1:0] count;
+
+f1_fsm lightoutput(
+  .clk(clk),
+  .rst(rst),
+  .en (tick),
+  .out (lightsequence)
+);
 
 always_ff @ (posedge clk)
     if (rst) begin
