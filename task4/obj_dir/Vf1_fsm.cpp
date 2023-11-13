@@ -17,6 +17,7 @@ Vf1_fsm::Vf1_fsm(VerilatedContext* _vcontextp__, const char* _vcname__)
     , out{vlSymsp->TOP.out}
     , cmd_seq{vlSymsp->TOP.cmd_seq}
     , cmd_delay{vlSymsp->TOP.cmd_delay}
+    , initTimer{vlSymsp->TOP.initTimer}
     , rootp{&(vlSymsp->TOP)}
 {
     // Register model with the context

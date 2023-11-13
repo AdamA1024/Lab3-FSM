@@ -4,7 +4,8 @@ module f1_fsm(
     input logic trigger, //initial trigger
     output logic [7:0] out, //lights
     output logic cmd_seq,//control MUX and clock
-    output logic cmd_delay//trigger for delay
+    output logic cmd_delay,//trigger for delay
+    output logic initTimer//start timing reaction
 );
     
     logic  mux0; //interconnect wire for delay
@@ -72,12 +73,14 @@ module f1_fsm(
             S0:
             begin     
                 out= 8'b00000000;
+                initTimer=1;
                 cmd_delay=0;
                 cmd_seq=1;
             end
             S1:     
             begin     
                 out= 8'b00000001;
+                initTimer=0;
                 cmd_delay=0;
                 cmd_seq=1;
             end

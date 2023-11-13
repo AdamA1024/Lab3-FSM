@@ -42,12 +42,22 @@ int main(int argc, char **argv, char **env)
       top->clk = !top->clk;
       top->eval();
     }
-    top->rst = (simcyc < 2); // assert reset for 1st cycle
+    top->rst = (simcyc < 1); // assert reset for 1st cycle
 
     // input trigger to kick of sequence
-    top->trigger = vbdFlag();
+    top->trigger = 0;
     // Display toggle neopixel
     vbdBar(top->out);
+    if (top->initTimer)
+    {
+      vbdInitWatch();
+      while (!vbdFlag())
+      {
+      }
+      int reactionTime = vbdElapsed();
+      std::cout << reactionTime << std::endl;
+      top->trigger = 1;
+    }
 
     vbdCycle(simcyc);
     if (Verilated::gotFinish())

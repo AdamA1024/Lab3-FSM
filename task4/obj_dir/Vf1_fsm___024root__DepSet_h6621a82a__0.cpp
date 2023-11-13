@@ -58,36 +58,39 @@ VL_INLINE_OPT void Vf1_fsm___024root___sequent__TOP__0(Vf1_fsm___024root* vlSelf
     vlSelf->f1_fsm__DOT__DelayUnit__DOT__RandomNgen__DOT__sreg 
         = __Vdly__f1_fsm__DOT__DelayUnit__DOT__RandomNgen__DOT__sreg;
     vlSelf->f1_fsm__DOT__ClockUnit__DOT__count = __Vdly__f1_fsm__DOT__ClockUnit__DOT__count;
-    vlSelf->out = (((((((((0U == vlSelf->f1_fsm__DOT__current_state) 
-                          | (1U == vlSelf->f1_fsm__DOT__current_state)) 
-                         | (2U == vlSelf->f1_fsm__DOT__current_state)) 
-                        | (3U == vlSelf->f1_fsm__DOT__current_state)) 
-                       | (4U == vlSelf->f1_fsm__DOT__current_state)) 
-                      | (5U == vlSelf->f1_fsm__DOT__current_state)) 
-                     | (6U == vlSelf->f1_fsm__DOT__current_state)) 
-                    | (7U == vlSelf->f1_fsm__DOT__current_state))
-                    ? ((0U == vlSelf->f1_fsm__DOT__current_state)
-                        ? 0U : ((1U == vlSelf->f1_fsm__DOT__current_state)
-                                 ? 1U : ((2U == vlSelf->f1_fsm__DOT__current_state)
-                                          ? 3U : ((3U 
+    if (((((((((0U == vlSelf->f1_fsm__DOT__current_state) 
+               | (1U == vlSelf->f1_fsm__DOT__current_state)) 
+              | (2U == vlSelf->f1_fsm__DOT__current_state)) 
+             | (3U == vlSelf->f1_fsm__DOT__current_state)) 
+            | (4U == vlSelf->f1_fsm__DOT__current_state)) 
+           | (5U == vlSelf->f1_fsm__DOT__current_state)) 
+          | (6U == vlSelf->f1_fsm__DOT__current_state)) 
+         | (7U == vlSelf->f1_fsm__DOT__current_state))) {
+        if ((0U == vlSelf->f1_fsm__DOT__current_state)) {
+            vlSelf->out = 0U;
+            vlSelf->initTimer = 1U;
+        } else if ((1U == vlSelf->f1_fsm__DOT__current_state)) {
+            vlSelf->out = 1U;
+            vlSelf->initTimer = 0U;
+        } else {
+            vlSelf->out = ((2U == vlSelf->f1_fsm__DOT__current_state)
+                            ? 3U : ((3U == vlSelf->f1_fsm__DOT__current_state)
+                                     ? 7U : ((4U == vlSelf->f1_fsm__DOT__current_state)
+                                              ? 0xfU
+                                              : ((5U 
+                                                  == vlSelf->f1_fsm__DOT__current_state)
+                                                  ? 0x1fU
+                                                  : 
+                                                 ((6U 
                                                    == vlSelf->f1_fsm__DOT__current_state)
-                                                   ? 7U
-                                                   : 
-                                                  ((4U 
-                                                    == vlSelf->f1_fsm__DOT__current_state)
-                                                    ? 0xfU
-                                                    : 
-                                                   ((5U 
-                                                     == vlSelf->f1_fsm__DOT__current_state)
-                                                     ? 0x1fU
-                                                     : 
-                                                    ((6U 
-                                                      == vlSelf->f1_fsm__DOT__current_state)
-                                                      ? 0x3fU
-                                                      : 0x7fU)))))))
-                    : ((8U == vlSelf->f1_fsm__DOT__current_state)
+                                                   ? 0x3fU
+                                                   : 0x7fU)))));
+        }
+    } else {
+        vlSelf->out = ((8U == vlSelf->f1_fsm__DOT__current_state)
                         ? 0xffU : ((9U == vlSelf->f1_fsm__DOT__current_state)
-                                    ? 0xffU : 0U)));
+                                    ? 0xffU : 0U));
+    }
     vlSelf->cmd_delay = ((~ ((((((((0U == vlSelf->f1_fsm__DOT__current_state) 
                                    | (1U == vlSelf->f1_fsm__DOT__current_state)) 
                                   | (2U == vlSelf->f1_fsm__DOT__current_state)) 

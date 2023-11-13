@@ -65,11 +65,13 @@ VL_ATTR_COLD void Vf1_fsm___024root___settle__TOP__0(Vf1_fsm___024root* vlSelf) 
          | (7U == vlSelf->f1_fsm__DOT__current_state))) {
         if ((0U == vlSelf->f1_fsm__DOT__current_state)) {
             vlSelf->out = 0U;
+            vlSelf->initTimer = 1U;
             vlSelf->f1_fsm__DOT__next_state = ((IData)(vlSelf->trigger)
                                                 ? 1U
                                                 : vlSelf->f1_fsm__DOT__current_state);
         } else if ((1U == vlSelf->f1_fsm__DOT__current_state)) {
             vlSelf->out = 1U;
+            vlSelf->initTimer = 0U;
             vlSelf->f1_fsm__DOT__next_state = ((IData)(vlSelf->f1_fsm__DOT__en)
                                                 ? 2U
                                                 : vlSelf->f1_fsm__DOT__current_state);
@@ -156,6 +158,7 @@ VL_ATTR_COLD void Vf1_fsm___024root___ctor_var_reset(Vf1_fsm___024root* vlSelf) 
     vlSelf->out = VL_RAND_RESET_I(8);
     vlSelf->cmd_seq = VL_RAND_RESET_I(1);
     vlSelf->cmd_delay = VL_RAND_RESET_I(1);
+    vlSelf->initTimer = VL_RAND_RESET_I(1);
     vlSelf->f1_fsm__DOT__mux1 = VL_RAND_RESET_I(1);
     vlSelf->f1_fsm__DOT__en = VL_RAND_RESET_I(1);
     vlSelf->f1_fsm__DOT__current_state = 0;

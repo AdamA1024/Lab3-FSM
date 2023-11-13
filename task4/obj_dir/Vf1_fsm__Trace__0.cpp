@@ -41,8 +41,9 @@ void Vf1_fsm___024root__trace_chg_sub_0(Vf1_fsm___024root* vlSelf, VerilatedVcd:
     bufp->chgCData(oldp+11,(vlSelf->out),8);
     bufp->chgBit(oldp+12,(vlSelf->cmd_seq));
     bufp->chgBit(oldp+13,(vlSelf->cmd_delay));
-    bufp->chgIData(oldp+14,(vlSelf->f1_fsm__DOT__next_state),32);
-    bufp->chgIData(oldp+15,(((0U == vlSelf->f1_fsm__DOT__DelayUnit__DOT__current_state)
+    bufp->chgBit(oldp+14,(vlSelf->initTimer));
+    bufp->chgIData(oldp+15,(vlSelf->f1_fsm__DOT__next_state),32);
+    bufp->chgIData(oldp+16,(((0U == vlSelf->f1_fsm__DOT__DelayUnit__DOT__current_state)
                               ? ((IData)(vlSelf->cmd_delay)
                                   ? 1U : vlSelf->f1_fsm__DOT__DelayUnit__DOT__current_state)
                               : ((1U == vlSelf->f1_fsm__DOT__DelayUnit__DOT__current_state)

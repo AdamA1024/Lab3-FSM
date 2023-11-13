@@ -19,6 +19,7 @@ class Vf1_fsm___024root final : public VerilatedModule {
     VL_OUT8(out,7,0);
     VL_OUT8(cmd_seq,0,0);
     VL_OUT8(cmd_delay,0,0);
+    VL_OUT8(initTimer,0,0);
     CData/*0:0*/ f1_fsm__DOT__mux1;
     CData/*0:0*/ f1_fsm__DOT__en;
     CData/*6:0*/ f1_fsm__DOT__DelayUnit__DOT__count;
