@@ -13,6 +13,7 @@ Vf1_fsm::Vf1_fsm(VerilatedContext* _vcontextp__, const char* _vcname__)
     , vlSymsp{new Vf1_fsm__Syms(contextp(), _vcname__, this)}
     , clk{vlSymsp->TOP.clk}
     , rst{vlSymsp->TOP.rst}
+    , trigger{vlSymsp->TOP.trigger}
     , out{vlSymsp->TOP.out}
     , cmd_seq{vlSymsp->TOP.cmd_seq}
     , cmd_delay{vlSymsp->TOP.cmd_delay}

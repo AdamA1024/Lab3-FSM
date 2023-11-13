@@ -1,8 +1,9 @@
 module f1_fsm(
     input logic clk, //clock signal
     input logic rst, //reset asynch
+    input logic trigger, //initial trigger
     output logic [7:0] out, //lights
-    output logic cmd_seq,//control MUX
+    output logic cmd_seq,//control MUX and clock
     output logic cmd_delay//trigger for delay
 );
     
@@ -43,7 +44,7 @@ module f1_fsm(
     //next state logic
     always_comb 
         case (current_state)
-            S0: if(en)  next_state=S1;
+            S0: if(trigger)  next_state=S1;
                 else    next_state = current_state;
             S1: if(en)  next_state=S2;
                 else    next_state = current_state;

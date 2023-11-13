@@ -15,6 +15,7 @@ class Vf1_fsm___024root final : public VerilatedModule {
     // DESIGN SPECIFIC STATE
     VL_IN8(clk,0,0);
     VL_IN8(rst,0,0);
+    VL_IN8(trigger,0,0);
     VL_OUT8(out,7,0);
     VL_OUT8(cmd_seq,0,0);
     VL_OUT8(cmd_delay,0,0);

@@ -58,6 +58,36 @@ VL_INLINE_OPT void Vf1_fsm___024root___sequent__TOP__0(Vf1_fsm___024root* vlSelf
     vlSelf->f1_fsm__DOT__DelayUnit__DOT__RandomNgen__DOT__sreg 
         = __Vdly__f1_fsm__DOT__DelayUnit__DOT__RandomNgen__DOT__sreg;
     vlSelf->f1_fsm__DOT__ClockUnit__DOT__count = __Vdly__f1_fsm__DOT__ClockUnit__DOT__count;
+    vlSelf->out = (((((((((0U == vlSelf->f1_fsm__DOT__current_state) 
+                          | (1U == vlSelf->f1_fsm__DOT__current_state)) 
+                         | (2U == vlSelf->f1_fsm__DOT__current_state)) 
+                        | (3U == vlSelf->f1_fsm__DOT__current_state)) 
+                       | (4U == vlSelf->f1_fsm__DOT__current_state)) 
+                      | (5U == vlSelf->f1_fsm__DOT__current_state)) 
+                     | (6U == vlSelf->f1_fsm__DOT__current_state)) 
+                    | (7U == vlSelf->f1_fsm__DOT__current_state))
+                    ? ((0U == vlSelf->f1_fsm__DOT__current_state)
+                        ? 0U : ((1U == vlSelf->f1_fsm__DOT__current_state)
+                                 ? 1U : ((2U == vlSelf->f1_fsm__DOT__current_state)
+                                          ? 3U : ((3U 
+                                                   == vlSelf->f1_fsm__DOT__current_state)
+                                                   ? 7U
+                                                   : 
+                                                  ((4U 
+                                                    == vlSelf->f1_fsm__DOT__current_state)
+                                                    ? 0xfU
+                                                    : 
+                                                   ((5U 
+                                                     == vlSelf->f1_fsm__DOT__current_state)
+                                                     ? 0x1fU
+                                                     : 
+                                                    ((6U 
+                                                      == vlSelf->f1_fsm__DOT__current_state)
+                                                      ? 0x3fU
+                                                      : 0x7fU)))))))
+                    : ((8U == vlSelf->f1_fsm__DOT__current_state)
+                        ? 0xffU : ((9U == vlSelf->f1_fsm__DOT__current_state)
+                                    ? 0xffU : 0U)));
     vlSelf->cmd_delay = ((~ ((((((((0U == vlSelf->f1_fsm__DOT__current_state) 
                                    | (1U == vlSelf->f1_fsm__DOT__current_state)) 
                                   | (2U == vlSelf->f1_fsm__DOT__current_state)) 
@@ -94,66 +124,78 @@ VL_INLINE_OPT void Vf1_fsm___024root___sequent__TOP__0(Vf1_fsm___024root* vlSelf
                                 : ((0U != vlSelf->f1_fsm__DOT__DelayUnit__DOT__current_state) 
                                    & ((1U != vlSelf->f1_fsm__DOT__DelayUnit__DOT__current_state) 
                                       & (2U == vlSelf->f1_fsm__DOT__DelayUnit__DOT__current_state))));
-    if (((((((((0U == vlSelf->f1_fsm__DOT__current_state) 
-               | (1U == vlSelf->f1_fsm__DOT__current_state)) 
-              | (2U == vlSelf->f1_fsm__DOT__current_state)) 
-             | (3U == vlSelf->f1_fsm__DOT__current_state)) 
-            | (4U == vlSelf->f1_fsm__DOT__current_state)) 
-           | (5U == vlSelf->f1_fsm__DOT__current_state)) 
-          | (6U == vlSelf->f1_fsm__DOT__current_state)) 
-         | (7U == vlSelf->f1_fsm__DOT__current_state))) {
-        if ((0U == vlSelf->f1_fsm__DOT__current_state)) {
-            vlSelf->out = 0U;
-            vlSelf->f1_fsm__DOT__next_state = ((IData)(vlSelf->f1_fsm__DOT__en)
+}
+
+VL_INLINE_OPT void Vf1_fsm___024root___combo__TOP__0(Vf1_fsm___024root* vlSelf) {
+    if (false && vlSelf) {}  // Prevent unused
+    Vf1_fsm__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vf1_fsm___024root___combo__TOP__0\n"); );
+    // Body
+    vlSelf->f1_fsm__DOT__next_state = (((((((((0U == vlSelf->f1_fsm__DOT__current_state) 
+                                              | (1U 
+                                                 == vlSelf->f1_fsm__DOT__current_state)) 
+                                             | (2U 
+                                                == vlSelf->f1_fsm__DOT__current_state)) 
+                                            | (3U == vlSelf->f1_fsm__DOT__current_state)) 
+                                           | (4U == vlSelf->f1_fsm__DOT__current_state)) 
+                                          | (5U == vlSelf->f1_fsm__DOT__current_state)) 
+                                         | (6U == vlSelf->f1_fsm__DOT__current_state)) 
+                                        | (7U == vlSelf->f1_fsm__DOT__current_state))
+                                        ? ((0U == vlSelf->f1_fsm__DOT__current_state)
+                                            ? ((IData)(vlSelf->trigger)
                                                 ? 1U
-                                                : vlSelf->f1_fsm__DOT__current_state);
-        } else if ((1U == vlSelf->f1_fsm__DOT__current_state)) {
-            vlSelf->out = 1U;
-            vlSelf->f1_fsm__DOT__next_state = ((IData)(vlSelf->f1_fsm__DOT__en)
-                                                ? 2U
-                                                : vlSelf->f1_fsm__DOT__current_state);
-        } else if ((2U == vlSelf->f1_fsm__DOT__current_state)) {
-            vlSelf->out = 3U;
-            vlSelf->f1_fsm__DOT__next_state = ((IData)(vlSelf->f1_fsm__DOT__en)
-                                                ? 3U
-                                                : vlSelf->f1_fsm__DOT__current_state);
-        } else if ((3U == vlSelf->f1_fsm__DOT__current_state)) {
-            vlSelf->out = 7U;
-            vlSelf->f1_fsm__DOT__next_state = ((IData)(vlSelf->f1_fsm__DOT__en)
-                                                ? 4U
-                                                : vlSelf->f1_fsm__DOT__current_state);
-        } else if ((4U == vlSelf->f1_fsm__DOT__current_state)) {
-            vlSelf->out = 0xfU;
-            vlSelf->f1_fsm__DOT__next_state = ((IData)(vlSelf->f1_fsm__DOT__en)
-                                                ? 5U
-                                                : vlSelf->f1_fsm__DOT__current_state);
-        } else if ((5U == vlSelf->f1_fsm__DOT__current_state)) {
-            vlSelf->out = 0x1fU;
-            vlSelf->f1_fsm__DOT__next_state = ((IData)(vlSelf->f1_fsm__DOT__en)
-                                                ? 6U
-                                                : vlSelf->f1_fsm__DOT__current_state);
-        } else if ((6U == vlSelf->f1_fsm__DOT__current_state)) {
-            vlSelf->out = 0x3fU;
-            vlSelf->f1_fsm__DOT__next_state = ((IData)(vlSelf->f1_fsm__DOT__en)
-                                                ? 7U
-                                                : vlSelf->f1_fsm__DOT__current_state);
-        } else {
-            vlSelf->out = 0x7fU;
-            vlSelf->f1_fsm__DOT__next_state = ((IData)(vlSelf->f1_fsm__DOT__en)
-                                                ? 8U
-                                                : vlSelf->f1_fsm__DOT__current_state);
-        }
-    } else if ((8U == vlSelf->f1_fsm__DOT__current_state)) {
-        vlSelf->out = 0xffU;
-        vlSelf->f1_fsm__DOT__next_state = 9U;
-    } else if ((9U == vlSelf->f1_fsm__DOT__current_state)) {
-        vlSelf->out = 0xffU;
-        vlSelf->f1_fsm__DOT__next_state = ((IData)(vlSelf->f1_fsm__DOT__en)
-                                            ? 0U : vlSelf->f1_fsm__DOT__current_state);
-    } else {
-        vlSelf->out = 0U;
-        vlSelf->f1_fsm__DOT__next_state = 0U;
-    }
+                                                : vlSelf->f1_fsm__DOT__current_state)
+                                            : ((1U 
+                                                == vlSelf->f1_fsm__DOT__current_state)
+                                                ? ((IData)(vlSelf->f1_fsm__DOT__en)
+                                                    ? 2U
+                                                    : vlSelf->f1_fsm__DOT__current_state)
+                                                : (
+                                                   (2U 
+                                                    == vlSelf->f1_fsm__DOT__current_state)
+                                                    ? 
+                                                   ((IData)(vlSelf->f1_fsm__DOT__en)
+                                                     ? 3U
+                                                     : vlSelf->f1_fsm__DOT__current_state)
+                                                    : 
+                                                   ((3U 
+                                                     == vlSelf->f1_fsm__DOT__current_state)
+                                                     ? 
+                                                    ((IData)(vlSelf->f1_fsm__DOT__en)
+                                                      ? 4U
+                                                      : vlSelf->f1_fsm__DOT__current_state)
+                                                     : 
+                                                    ((4U 
+                                                      == vlSelf->f1_fsm__DOT__current_state)
+                                                      ? 
+                                                     ((IData)(vlSelf->f1_fsm__DOT__en)
+                                                       ? 5U
+                                                       : vlSelf->f1_fsm__DOT__current_state)
+                                                      : 
+                                                     ((5U 
+                                                       == vlSelf->f1_fsm__DOT__current_state)
+                                                       ? 
+                                                      ((IData)(vlSelf->f1_fsm__DOT__en)
+                                                        ? 6U
+                                                        : vlSelf->f1_fsm__DOT__current_state)
+                                                       : 
+                                                      ((6U 
+                                                        == vlSelf->f1_fsm__DOT__current_state)
+                                                        ? 
+                                                       ((IData)(vlSelf->f1_fsm__DOT__en)
+                                                         ? 7U
+                                                         : vlSelf->f1_fsm__DOT__current_state)
+                                                        : 
+                                                       ((IData)(vlSelf->f1_fsm__DOT__en)
+                                                         ? 8U
+                                                         : vlSelf->f1_fsm__DOT__current_state))))))))
+                                        : ((8U == vlSelf->f1_fsm__DOT__current_state)
+                                            ? 9U : 
+                                           ((9U == vlSelf->f1_fsm__DOT__current_state)
+                                             ? ((IData)(vlSelf->f1_fsm__DOT__en)
+                                                 ? 0U
+                                                 : vlSelf->f1_fsm__DOT__current_state)
+                                             : 0U)));
 }
 
 void Vf1_fsm___024root___eval(Vf1_fsm___024root* vlSelf) {
@@ -166,6 +208,7 @@ void Vf1_fsm___024root___eval(Vf1_fsm___024root* vlSelf) {
         Vf1_fsm___024root___sequent__TOP__0(vlSelf);
         vlSelf->__Vm_traceActivity[1U] = 1U;
     }
+    Vf1_fsm___024root___combo__TOP__0(vlSelf);
     // Final
     vlSelf->__Vclklast__TOP__clk = vlSelf->clk;
     vlSelf->__Vclklast__TOP__rst = vlSelf->rst;
@@ -181,5 +224,7 @@ void Vf1_fsm___024root___eval_debug_assertions(Vf1_fsm___024root* vlSelf) {
         Verilated::overWidthError("clk");}
     if (VL_UNLIKELY((vlSelf->rst & 0xfeU))) {
         Verilated::overWidthError("rst");}
+    if (VL_UNLIKELY((vlSelf->trigger & 0xfeU))) {
+        Verilated::overWidthError("trigger");}
 }
 #endif  // VL_DEBUG

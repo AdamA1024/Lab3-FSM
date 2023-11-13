@@ -42,11 +42,13 @@ int main(int argc, char **argv, char **env)
       top->clk = !top->clk;
       top->eval();
     }
+    top->rst = (simcyc < 2); // assert reset for 1st cycle
 
+    // input trigger to kick of sequence
+    top->trigger = vbdFlag();
     // Display toggle neopixel
     vbdBar(top->out);
-    // set up input signals of testbench
-    top->rst = (simcyc < 2); // assert reset for 1st cycle
+
     vbdCycle(simcyc);
     if (Verilated::gotFinish())
       exit(0);
