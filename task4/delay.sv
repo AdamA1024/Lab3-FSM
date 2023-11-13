@@ -1,26 +1,33 @@
 module delay #(
-	parameter WIDTH = 10    // no of bits in delay counter
+	parameter WIDTH = 7    // no of bits in delay counter
 )(
     input   logic               clk,        // clock signal
     input   logic               rst,        // reset signal
     input   logic               trigger,    // trigger input signal
-    input   logic [WIDTH-1:0]   n,          // no of clock cycle delay
     output  logic               time_out    // output pulse signal
 );
     // Declare counter
     logic [WIDTH-1:0]   count = {WIDTH{1'b0}};            // internal counter
+    logic [WIDTH-1:0]  n; //interconnect wire
 
     // Define our states
     typedef enum {IDLE, COUNTING, TIME_OUT, WAIT_LOW}  my_state;
     my_state current_state, next_state;
 
+    lfsr RandomNgen(
+        .clk (clk),
+        .rst (rst),
+        .en (1'b1),
+        .data_out (n)
+    );
+
     // counter
-    always_ff @(posedge clk)
+    always_ff @(posedge clk, posedge rst)
         if (rst | trigger | count=={WIDTH{1'b0}}) count <= n - 1'b1;
         else                                count <= count - 1'b1;
 
     // state transition
-    always_ff @(posedge clk)
+    always_ff @(posedge clk, posedge rst)
         if (rst)    current_state <= IDLE;
         else        current_state <= next_state; 
 
